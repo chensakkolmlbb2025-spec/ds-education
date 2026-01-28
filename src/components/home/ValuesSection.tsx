@@ -1,53 +1,132 @@
-const values = [
+import { useTranslation } from "react-i18next";
+import { Target, Eye, Heart } from "lucide-react";
+import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
+import { fadeInUp, staggerContainer } from "@/lib/animations";
+
+const valuesConfig = [
   {
-    title: "MISSION",
-    description:
-      "To provide consultancy services and support for international courses for English and other top universities.",
+    titleKey: "values.mission.title",
+    descriptionKey: "values.mission.description",
     variant: "outline" as const,
+    icon: Target,
   },
   {
-    title: "VISION",
-    description: "To be the most preferred educational consulting agency.",
+    titleKey: "values.vision.title",
+    descriptionKey: "values.vision.description",
     variant: "filled" as const,
+    icon: Eye,
   },
   {
-    title: "CORE VALUES",
-    description: "Committed Delivery, Perseverance, Trust and Supportive.",
+    titleKey: "values.coreValues.title",
+    descriptionKey: "values.coreValues.description",
     variant: "outline" as const,
+    icon: Heart,
   },
 ];
 
 const ValuesSection = () => {
+  const { t } = useTranslation();
+
   return (
-    <section className="py-12 bg-background">
-      <div className="ds-container">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {values.map((value, index) => (
-            <div
+    <section className="ds-section-sm bg-background relative overflow-hidden">
+      {/* Background decoration */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.5 }}
+        className="absolute inset-0 pointer-events-none"
+      >
+        <motion.div 
+          animate={{ 
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.5, 0.3]
+          }}
+          transition={{ duration: 8, repeat: Infinity }}
+          className="absolute top-0 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl" 
+        />
+        <motion.div 
+          animate={{ 
+            scale: [1, 1.3, 1],
+            opacity: [0.3, 0.6, 0.3]
+          }}
+          transition={{ duration: 10, repeat: Infinity }}
+          className="absolute bottom-0 right-1/4 w-48 h-48 bg-accent/5 rounded-full blur-3xl" 
+        />
+      </motion.div>
+
+      <div className="ds-container relative z-10">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer()}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"
+        >
+          {valuesConfig.map((value, index) => (
+            <motion.div
               key={index}
-              className={`p-8 rounded-lg text-center transition-all duration-300 hover-lift ${
+              variants={fadeInUp}
+              whileHover={{ y: -8, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className={cn(
+                "group relative p-8 md:p-10 rounded-2xl text-center overflow-hidden",
+                "backdrop-blur-glass-lg shadow-2xl",
                 value.variant === "filled"
-                  ? "bg-primary text-primary-foreground"
-                  : "border-2 border-primary bg-background"
-              }`}
+                  ? "bg-primary/80 border border-white/20 text-primary-foreground"
+                  : "bg-white/40 border border-primary/30 hover:bg-white/60 hover:border-primary/50"
+              )}
             >
+              {/* Icon */}
+              <motion.div 
+                whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.1 }}
+                transition={{ duration: 0.5 }}
+                className={cn(
+                  "w-16 h-16 mx-auto mb-6 rounded-2xl flex items-center justify-center",
+                  "backdrop-blur-md bg-white/30 border border-white/40 shadow-inner"
+                )}
+              >
+                <value.icon className={cn(
+                  "h-8 w-8 drop-shadow",
+                  value.variant === "filled" ? "text-accent" : "text-primary"
+                )} />
+              </motion.div>
+
+              {/* Title */}
               <h3
-                className={`text-xl font-bold mb-4 ${
+                className={cn(
+                  "text-xl font-bold mb-4 uppercase tracking-wide",
                   value.variant === "filled" ? "text-primary-foreground" : "text-primary"
-                }`}
+                )}
               >
-                {value.title}
+                {t(value.titleKey)}
               </h3>
+
+              {/* Description */}
               <p
-                className={`text-sm leading-relaxed ${
-                  value.variant === "filled" ? "text-primary-foreground/90" : "text-muted-foreground"
-                }`}
+                className={cn(
+                  "text-sm leading-relaxed",
+                  value.variant === "filled" ? "text-primary-foreground/85" : "text-muted-foreground"
+                )}
               >
-                {value.description}
+                {t(value.descriptionKey)}
               </p>
-            </div>
+
+              {/* Decorative corner for filled variant */}
+              {value.variant === "filled" && (
+                <motion.div 
+                  animate={{ 
+                    scale: [1, 1.2, 1],
+                    opacity: [0.2, 0.3, 0.2]
+                  }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                  className="absolute -top-4 -right-4 w-24 h-24 bg-accent/20 rounded-full blur-2xl" 
+                />
+              )}
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

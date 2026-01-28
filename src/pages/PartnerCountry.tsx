@@ -1,6 +1,11 @@
 import { useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import Layout from "@/components/layout/Layout";
 import heroImage from "@/assets/hero-singapore.jpg";
+import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
+import { fadeInUp, staggerContainer, scaleIn, fadeInLeft, fadeInRight } from "@/lib/animations";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 interface CountryData {
   name: string;
@@ -218,14 +223,19 @@ const countryData: Record<string, CountryData> = {
 
 const PartnerCountry = () => {
   const { country } = useParams<{ country: string }>();
+  const { t } = useTranslation();
   const data = country ? countryData[country] : null;
+  
+  const heroAnimation = useScrollAnimation();
+  const infoAnimation = useScrollAnimation();
+  const universitiesAnimation = useScrollAnimation();
 
   if (!data) {
     return (
       <Layout>
         <div className="ds-section ds-container text-center">
-          <h1 className="ds-heading">Country not found</h1>
-          <p className="text-muted-foreground mt-4">Please select a valid study destination.</p>
+          <h1 className="ds-heading">{t("notFound.message")}</h1>
+          <p className="text-muted-foreground mt-4">{t("notFound.description")}</p>
         </div>
       </Layout>
     );
@@ -234,75 +244,116 @@ const PartnerCountry = () => {
   return (
     <Layout>
       {/* Hero Banner */}
-      <section className="relative h-16 md:h-20">
+      <motion.section 
+        ref={heroAnimation.ref}
+        initial="hidden"
+        animate={heroAnimation.isInView ? "visible" : "hidden"}
+        variants={fadeInUp}
+        className="relative h-16 md:h-20"
+      >
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
           <div className="absolute inset-0 bg-primary/70" />
         </div>
-      </section>
+      </motion.section>
 
       {/* Country Button */}
       <section className="py-16 bg-background">
         <div className="ds-container">
-          <div className="flex justify-center mb-16">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="flex justify-center mb-16"
+          >
             <button className="flex items-center gap-3 bg-destructive text-destructive-foreground px-6 py-3 rounded-md hover:opacity-90 transition-opacity">
               <span className="text-2xl">{data.flag}</span>
               <span className="font-medium">{data.name}</span>
             </button>
-          </div>
+          </motion.div>
 
           {/* Info Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <div className="bg-card border border-border rounded-lg p-6 shadow-card">
-              <h3 className="text-lg font-bold mb-4 text-primary">Education</h3>
+          <motion.div 
+            ref={infoAnimation.ref}
+            initial="hidden"
+            animate={infoAnimation.isInView ? "visible" : "hidden"}
+            variants={staggerContainer(0.2, 0.3)}
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto"
+          >
+            <motion.div variants={fadeInLeft} className="bg-card border border-border rounded-lg p-6 shadow-card">
+              <h3 className="text-lg font-bold mb-4 text-primary">{t("partners.education")}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 {data.education}
               </p>
-            </div>
-            <div className="bg-card border border-border rounded-lg p-6 shadow-card">
-              <h3 className="text-lg font-bold mb-4 text-accent">Visa</h3>
+            </motion.div>
+            <motion.div variants={scaleIn} className="bg-card border border-border rounded-lg p-6 shadow-card">
+              <h3 className="text-lg font-bold mb-4 text-accent">{t("partners.visa")}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 {data.visa}
               </p>
-            </div>
-            <div className="bg-card border border-border rounded-lg p-6 shadow-card">
-              <h3 className="text-lg font-bold mb-4 text-ds-orange">Accommodation</h3>
+            </motion.div>
+            <motion.div variants={fadeInRight} className="bg-card border border-border rounded-lg p-6 shadow-card">
+              <h3 className="text-lg font-bold mb-4 text-ds-orange">{t("partners.accommodation")}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 {data.accommodation}
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* University Partners */}
       <section className="ds-section bg-background">
         <div className="ds-container">
-          <h2 className="text-2xl md:text-3xl font-bold text-primary text-center mb-12 underline underline-offset-8 decoration-2">
-            Our University Partners in {data.name}
-          </h2>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-2xl md:text-3xl font-bold text-primary text-center mb-12 underline underline-offset-8 decoration-2"
+          >
+            {t("partners.universities")} - {data.name}
+          </motion.h2>
 
           {/* Partners Grid */}
           <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <motion.div 
+              ref={universitiesAnimation.ref}
+              initial="hidden"
+              animate={universitiesAnimation.isInView ? "visible" : "hidden"}
+              variants={staggerContainer(0.05, 0.2)}
+              className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+            >
               {data.universities.map((uni, index) => (
-                <div
+                <motion.div
                   key={index}
-                  className="bg-card border border-border rounded-lg p-4 text-center hover:shadow-lg transition-shadow"
+                  variants={scaleIn}
+                  className={cn(
+                    "backdrop-blur-glass-lg bg-white/40 border border-white/30",
+                    "rounded-lg p-4 text-center shadow-md",
+                    "hover:shadow-xl hover:bg-white/60 hover:scale-105",
+                    "transition-all duration-300"
+                  )}
                 >
-                  <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-2xl font-bold text-primary">
+                  {/* Logo container with nested glass */}
+                  <div className={cn(
+                    "w-16 h-16 rounded-full mx-auto mb-3",
+                    "backdrop-blur-md bg-gradient-to-br from-white/60 to-white/30",
+                    "border border-white/50 shadow-inner",
+                    "flex items-center justify-center"
+                  )}>
+                    <span className="text-2xl font-bold text-primary drop-shadow">
                       {uni.name.charAt(0)}
                     </span>
                   </div>
                   <p className="text-sm font-medium text-foreground leading-tight">
                     {uni.name}
                   </p>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

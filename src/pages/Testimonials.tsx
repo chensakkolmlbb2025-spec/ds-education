@@ -1,8 +1,12 @@
+import { useTranslation } from "react-i18next";
 import Layout from "@/components/layout/Layout";
 import heroImage from "@/assets/hero-singapore.jpg";
 import testimonialStudent from "@/assets/testimonial-student.jpg";
 import teamMember1 from "@/assets/team-member1.jpg";
 import teamMember2 from "@/assets/team-member2.jpg";
+import { motion } from "framer-motion";
+import { fadeInUp, staggerContainer, scaleIn } from "@/lib/animations";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const testimonials = [
   {
@@ -32,10 +36,20 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+  const { t } = useTranslation();
+  const heroAnimation = useScrollAnimation();
+  const testimonialsAnimation = useScrollAnimation();
+
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32">
+      <motion.section 
+        ref={heroAnimation.ref}
+        initial="hidden"
+        animate={heroAnimation.isInView ? "visible" : "hidden"}
+        variants={fadeInUp}
+        className="relative py-20 md:py-32"
+      >
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
@@ -43,22 +57,35 @@ const Testimonials = () => {
           <div className="absolute inset-0 bg-primary/90" />
         </div>
         <div className="ds-container relative z-10 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
-            Testimonials
-          </h1>
-          <p className="text-lg md:text-xl text-primary-foreground/90 max-w-3xl mx-auto">
-            Hear from our successful students who achieved their educational dreams
-          </p>
+          <motion.h1 
+            variants={fadeInUp}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6"
+          >
+            {t("testimonialsPage.pageTitle")}
+          </motion.h1>
+          <motion.p 
+            variants={fadeInUp}
+            className="text-lg md:text-xl text-primary-foreground/90 max-w-3xl mx-auto"
+          >
+            {t("testimonialsPage.pageSubtitle")}
+          </motion.p>
         </div>
-      </section>
+      </motion.section>
 
       {/* Testimonials Grid */}
       <section className="ds-section bg-background">
-        <div className="ds-container">
+        <motion.div 
+          ref={testimonialsAnimation.ref}
+          initial="hidden"
+          animate={testimonialsAnimation.isInView ? "visible" : "hidden"}
+          variants={staggerContainer(0.2, 0.3)}
+          className="ds-container"
+        >
           <div className="max-w-4xl mx-auto space-y-12">
             {testimonials.map((testimonial, index) => (
-              <div
+              <motion.div
                 key={index}
+                variants={scaleIn}
                 className={`flex flex-col ${
                   index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                 } gap-8 items-center bg-muted rounded-lg p-8`}
@@ -92,10 +119,10 @@ const Testimonials = () => {
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </section>
     </Layout>
   );

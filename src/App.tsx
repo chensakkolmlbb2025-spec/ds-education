@@ -3,6 +3,8 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
 import PartnerCountry from "./pages/PartnerCountry";
@@ -13,24 +15,37 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+const AppContent = () => {
+  const { i18n } = useTranslation();
+
+  // Update HTML lang attribute when language changes
+  useEffect(() => {
+    document.documentElement.lang = i18n.language;
+  }, [i18n.language]);
+
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/partners" element={<Navigate to="/partners/singapore" replace />} />
+        <Route path="/partners/:country" element={<PartnerCountry />} />
+        <Route path="/foundation" element={<Foundation />} />
+        <Route path="/testimonials" element={<Testimonials />} />
+        <Route path="/contact" element={<Contact />} />
+        {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/partners" element={<Navigate to="/partners/singapore" replace />} />
-          <Route path="/partners/:country" element={<PartnerCountry />} />
-          <Route path="/foundation" element={<Foundation />} />
-          <Route path="/testimonials" element={<Testimonials />} />
-          <Route path="/contact" element={<Contact />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <AppContent />
     </TooltipProvider>
   </QueryClientProvider>
 );

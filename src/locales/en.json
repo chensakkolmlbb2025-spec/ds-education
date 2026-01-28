@@ -1,0 +1,258 @@
+{
+  "common": {
+    "bookNow": "Book Now",
+    "learnMore": "Learn More",
+    "submit": "Submit",
+    "send": "Send",
+    "close": "Close",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "partners": "Partners",
+    "foundation": "DS Foundation",
+    "testimonials": "Testimonials",
+    "contact": "Contact",
+    "toggleMenu": "Toggle menu",
+    "switchLanguage": "Switch language"
+  },
+  "hero": {
+    "tagline": "DS EDUCATION",
+    "title": "Your Gateway to Global Education Starts Here.",
+    "titleHighlight": "World-Class",
+    "titleSuffix": "Excellence",
+    "subtitle": "Making world-leading education accessible to everyone.",
+    "cta": "Our Services",
+    "ctaSecondary": "Free Consultation",
+    "trustedBy": "Trusted by students worldwide",
+    "studentRating": "Student Rating",
+    "badges": {
+      "accredited": "Universities",
+      "students": "Students Helped",
+      "countries": "Countries",
+      "rating": "Rating"
+    }
+  },
+  "whyDS": {
+    "title": "Why DS Education",
+    "subtitle": "Why Choose Us",
+    "description": "DS Education was founded by a team of experienced professionals committed to offering free consultancy services to students and those abroad. Our team is passionate in guiding students every step of their way through their chosen University application, admission and student visa process. At DS Education, we are inspired to help students to achieve their educational goals one choice at a time.",
+    "cta": "Our Testimonials"
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Who We Are",
+    "yearsExp": "Years Experience",
+    "description1": "DS Education has been formed in 2022 by an expert in education who provides education opportunities supporting overseas education service to UK, Malta, Singapore, USA among others. We are a reputed based company and is located in both Jakarta and Cambodia.",
+    "description2": "Our mission is to provide accessible education consultation services to students looking to pursue their academic dreams abroad."
+  },
+  "values": {
+    "mission": {
+      "title": "MISSION",
+      "description": "To provide consultancy services and support for international courses for English and other top universities."
+    },
+    "vision": {
+      "title": "VISION",
+      "description": "To be the most preferred educational consulting agency."
+    },
+    "coreValues": {
+      "title": "CORE VALUES",
+      "description": "Committed Delivery, Perseverance, Trust and Supportive."
+    }
+  },
+  "team": {
+    "title": "Meet the Team",
+    "subtitle": "Meet Our Team",
+    "tagline": "Dedication. Expertise. Passion.",
+    "founder": {
+      "name": "Desmond Hong",
+      "role": "Founder & CEO"
+    },
+    "members": {
+      "veasna": {
+        "name": "Nhean Veasna",
+        "role": "Sales Officer & Recruiter"
+      },
+      "jernMay": {
+        "name": "Jern May Ui",
+        "role": "Sales Officer & Recruiter"
+      },
+      "sarah": {
+        "name": "Sarah Chhunlay",
+        "role": "Consultant"
+      }
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "What We Offer",
+    "intro": "Comprehensive education services to support your journey from start to finish",
+    "viewAll": "View All Services",
+    "pageTitle": "Our Services",
+    "pageSubtitle": "Explore more opportunities with our study abroad consultancy and services. We provide overseas placements, visa assistance, and translation services for a seamless experience. Our study tours and accommodation support ensure comfort that meet your needs. Embark your study abroad journey with us today and let us make your dreams a reality!",
+    "translation": {
+      "title": "Translation Service",
+      "description": "We provide translation service from the local language to English."
+    },
+    "studyTour": {
+      "title": "Study Tour",
+      "description": "We provide the students the experiences of studying and living overseas before they make their choice of foreign country to study.",
+      "details": [
+        "During our study tour, the students will experience studying, living and the culture of the country they do the study tour.",
+        "We are also assisting students and student parents to visit the schools or universities they wish to visit during the trip."
+      ]
+    },
+    "visa": {
+      "title": "Visa Guidance",
+      "description": "We are providing the professional service for visa preparation and process for many types of visa to overseas."
+    },
+    "consultation": {
+      "title": "Study Abroad Consultation",
+      "description": "Our team will assist the students who wish to study overseas to their country of choice since the beginning of the process until the student graduate.",
+      "details": [
+        "Consultation to the better choice of countries, subjects, university choices for students",
+        "Admission application preparation and process",
+        "Visa application process",
+        "Accommodation advise",
+        "Studying progression follow up"
+      ]
+    },
+    "foundation": {
+      "title": "DS Foundation",
+      "description": "DS Foundation is the foundation which is formed by DS Overseas Education Consultant in order to provide the opportunities to less fortune students from less developed areas in Cambodia to continue studying their degree."
+    },
+    "accommodation": {
+      "title": "Accommodation Arrangement",
+      "description": "Our accommodation arrangement services help international students to find comfortable and affordable housing in their new country. We assist in securing the best options based on your budget and preferences to ensure a smooth transition and a great start to your academic journey."
+    }
+  },
+  "testimonial": {
+    "title": "TESTIMONIAL",
+    "subtitle": "Student Success Stories",
+    "cta": "Read More Success Stories",
+    "quote": "I became a student at Pine DS Education. The feedback I received in the UK, is not just for study but also for everyday life. I personally think being in Pine for 2+ years has been so well that currently am in graduate programme studying at a particular university in the UK. I am thankful to DS Education and I hope that other students also get the opportunity to gain the experience and share the knowledge like me.",
+    "author": "SASAT Chander",
+    "role": "Foundation – Bachelors of Computing",
+    "university": "Bath University, Australia"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get In Touch",
+    "getInTouch": "Get in Touch",
+    "description": "Unhappy on an education issue? DS Education facilitates the delivery of learning through guidance. Reach out to us today!",
+    "info": "Contact Information",
+    "formIntro": "Fill out the form below and we'll get back to you within 24 hours.",
+    "successTitle": "Message Sent!",
+    "successMessage": "We'll get back to you as soon as possible.",
+    "mainOffice": "Main Office",
+    "phoneNumbers": "Phone Numbers",
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "locations": {
+      "jakarta": "Jakarta, Indonesia",
+      "phnomPenh": "Phnom Penh, Cambodia",
+      "singapore": "Singapore"
+    },
+    "form": {
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Enter your full name",
+      "email": "Email Address",
+      "emailPlaceholder": "Enter your email address",
+      "phone": "Phone Number",
+      "phonePlaceholder": "Enter your phone number",
+      "subject": "Subject",
+      "subjectPlaceholder": "What is this about?",
+      "message": "Message",
+      "messagePlaceholder": "Type your message here...",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "successMessage": "Your message has been sent successfully!",
+      "errorMessage": "Failed to send message. Please try again."
+    }
+  },
+  "footer": {
+    "tagline": "Start Your application with DS Education",
+    "studyAbroad": "Study Abroad",
+    "studyIn": "Study in {{country}}",
+    "aboutUs": "About Us",
+    "contactUs": "Contact Us",
+    "office": "Office",
+    "viewAll": "View all destinations",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "copyright": "© Copyright {{year}} DS Education. All Rights Reserved.",
+    "officeLocations": {
+      "phnomPenh": "Phnom Penh, Cambodia",
+      "jakarta": "Jakarta, Indonesia"
+    },
+    "countries": {
+      "singapore": "Singapore",
+      "uk": "United Kingdom",
+      "australia": "Australia",
+      "usa": "USA",
+      "southKorea": "South Korea",
+      "china": "China",
+      "switzerland": "Switzerland",
+      "canada": "Canada",
+      "vietnam": "Vietnam"
+    }
+  },
+  "foundation": {
+    "pageTitle": "DS Foundation",
+    "pageSubtitle": "Empowering students from less developed areas to achieve their educational dreams",
+    "aboutTitle": "About DS Foundation",
+    "aboutDescription": "DS Foundation is the foundation which is formed by DS Overseas Education Consultant in order to provide the opportunities to less fortune students from less developed areas in Cambodia to continue studying their degree. We believe that education is the key to breaking the cycle of poverty and creating a brighter future.",
+    "compassion": {
+      "title": "Compassion",
+      "description": "We care deeply about every student's future and well-being"
+    },
+    "opportunity": {
+      "title": "Opportunity",
+      "description": "Creating pathways to quality education for underprivileged students"
+    },
+    "community": {
+      "title": "Community",
+      "description": "Building a network of support for students and families"
+    },
+    "impactTitle": "Our Impact",
+    "studentsSupported": "Students Supported",
+    "partnerUniversities": "Partner Universities",
+    "countries": "Countries"
+  },
+  "testimonialsPage": {
+    "pageTitle": "Testimonials",
+    "pageSubtitle": "Hear from our successful students who achieved their educational dreams"
+  },
+  "partners": {
+    "title": "Study in {{country}}",
+    "education": "Education",
+    "visa": "Visa Requirements",
+    "accommodation": "Accommodation",
+    "universities": "Partner Universities"
+  },
+  "stats": {
+    "subtitle": "Our Impact",
+    "title": "Transforming Lives Through Education",
+    "description": "Join thousands of students who have achieved their dreams with our guidance",
+    "students": "Students Helped",
+    "universities": "Partner Universities",
+    "countries": "Countries",
+    "successRate": "Success Rate",
+    "experience": "Years Experience"
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Oops! Page not found",
+    "description": "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.",
+    "backHome": "Back to Home"
+  },
+  "language": {
+    "select": "Select language",
+    "english": "English",
+    "khmer": "Khmer",
+    "currentLanguage": "Current language: {{language}}"
+  }
+}
