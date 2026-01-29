@@ -1,9 +1,9 @@
 import { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { ChevronLeft, ChevronRight, Star, Quote, Play, Pause } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star, Quote } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { ButtonDS, IconButtonDS } from "@/components/ui/button-ds";
+import { ButtonDS } from "@/components/ui/button-ds";
 import testimonialStudent from "@/assets/testimonial-student.jpg";
 
 // Extended testimonials data
@@ -100,256 +100,112 @@ const TestimonialSection = () => {
   const currentTestimonial = testimonialsData[currentIndex];
 
   return (
-    <section className="ds-section bg-gradient-to-b from-muted/30 via-background to-muted/20 relative overflow-hidden">
-      {/* Enhanced Background decorations with animation */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-10 left-10 w-96 h-96 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-10 right-10 w-80 h-80 bg-gradient-to-tl from-primary/10 via-primary/5 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/3 rounded-full blur-3xl" />
-        
-        {/* Floating elements */}
-        <div className="absolute top-20 right-1/4 w-2 h-2 bg-primary/30 rounded-full animate-bounce" style={{ animationDuration: '3s' }} />
-        <div className="absolute bottom-32 left-1/4 w-3 h-3 bg-primary/30 rounded-full animate-bounce" style={{ animationDuration: '4s', animationDelay: '0.5s' }} />
-      </div>
-
-      <div className="ds-container relative z-10">
-        {/* Enhanced Header with stats */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 backdrop-blur-md bg-primary/10 px-4 py-2 rounded-full mb-4 border border-primary/20">
-            <Star className="w-4 h-4 text-primary fill-primary" />
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              {t("testimonial.subtitle", "Student Success Stories")}
-            </span>
-            <Star className="w-4 h-4 text-primary fill-primary" />
-          </div>
-          <h2 className="ds-heading mb-4">{t("testimonial.title")}</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
+    <section className="ds-section bg-muted/50">
+      <div className="ds-container">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <span className="text-primary font-semibold text-sm uppercase tracking-wider">
+            {t("testimonial.subtitle", "Student Success Stories")}
+          </span>
+          <h2 className="ds-heading mt-3 mb-4">{t("testimonial.title")}</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             {t("testimonial.description", "Hear from our students who achieved their dreams of studying abroad")}
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto rounded-full" />
         </div>
 
-        {/* Main Testimonial Showcase */}
-        <div className="max-w-6xl mx-auto mb-12">
-          <div className="relative">
-            {/* Decorative quote marks */}
-            <div className="absolute -top-8 -left-4 md:left-6 z-0">
-              <Quote className="w-20 h-20 md:w-32 md:h-32 text-primary/10 rotate-180" />
-            </div>
-            <div className="absolute -bottom-8 -right-4 md:right-6 z-0">
-              <Quote className="w-20 h-20 md:w-32 md:h-32 text-primary/10" />
-            </div>
-
-            {/* Enhanced Carousel content with fade animation */}
+        {/* Testimonial Carousel */}
+        <div className="max-w-4xl mx-auto mb-12">
+          <div className="relative px-12">
+            {/* Card */}
             <div 
               key={currentTestimonial.id}
-              className={cn(
-                "relative z-10 rounded-3xl p-8 md:p-14",
-                "backdrop-blur-glass-xl bg-gradient-to-br from-white/70 via-white/60 to-white/50",
-                "dark:from-primary/40 dark:via-primary/30 dark:to-primary/20",
-                "border-2 border-white/40 shadow-2xl shadow-primary/20",
-                "transition-all duration-700 ease-in-out",
-                "before:absolute before:inset-0 before:rounded-3xl",
-                "before:bg-gradient-to-br before:from-white/50 before:via-transparent before:to-white/30",
-                "before:opacity-60 before:pointer-events-none",
-                "after:absolute after:inset-0 after:rounded-3xl after:bg-gradient-to-t after:from-primary/5 after:to-transparent after:pointer-events-none",
-                "animate-in fade-in-0 slide-in-from-bottom-4 duration-700"
-              )}
+              className="bg-white rounded-2xl p-8 md:p-12 shadow-lg border border-border"
             >
-              <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-                {/* Enhanced Image section - 4 columns */}
-                <div className="lg:col-span-4 flex justify-center">
-                  <div className="relative group">
-                    {/* Animated decorative rings */}
-                    <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-primary/30 via-primary/20 to-primary/30 blur-lg group-hover:blur-xl transition-all duration-500 animate-pulse" />
-                    <div className="absolute -inset-1 rounded-3xl bg-gradient-to-br from-white/50 to-white/20 group-hover:from-white/70 group-hover:to-white/30 transition-all duration-500" />
-                    
-                    {/* Image container */}
-                    <div className="relative">
-                      <img
-                        src={currentTestimonial.image}
-                        alt={t(currentTestimonial.authorKey)}
-                        className={cn(
-                          "relative w-56 h-56 md:w-72 md:h-72 rounded-3xl object-cover",
-                          "shadow-2xl transition-all duration-700",
-                          "group-hover:scale-[1.02] group-hover:shadow-primary/20"
-                        )}
-                      />
-                      
-                      {/* Overlay gradient on hover */}
-                      <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-primary/60 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    </div>
-                    
-                    {/* Enhanced Rating badge */}
-                    <div className={cn(
-                      "absolute -bottom-5 left-1/2 -translate-x-1/2 rounded-2xl px-6 py-3",
-                      "backdrop-blur-glass-lg bg-white/90 dark:bg-primary/90",
-                      "border-2 border-white/60 shadow-xl",
-                      "transform group-hover:scale-110 transition-transform duration-300"
-                    )}>
-                      <StarRating rating={currentTestimonial.rating} />
-                    </div>
-                  </div>
+              {/* Opening Quote */}
+              <div className="flex justify-start mb-4">
+                <Quote className="w-10 h-10 text-primary/20" />
+              </div>
+              
+              {/* Quote Text */}
+              <p className="text-lg md:text-xl text-foreground leading-relaxed mb-6 italic">
+                {t(currentTestimonial.quoteKey)}
+              </p>
+              
+              {/* Closing Quote */}
+              <div className="flex justify-end mb-6">
+                <Quote className="w-10 h-10 text-primary/20 rotate-180" />
+              </div>
+              
+              {/* Author Info */}
+              <div className="flex items-center gap-4 pt-6 border-t border-border">
+                <img
+                  src={currentTestimonial.image}
+                  alt={t(currentTestimonial.authorKey)}
+                  className="w-14 h-14 rounded-full object-cover ring-2 ring-primary/10"
+                />
+                <div className="flex-1">
+                  <p className="font-bold text-foreground text-lg">
+                    {t(currentTestimonial.authorKey)}
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    {t(currentTestimonial.roleKey)}
+                  </p>
+                  <p className="text-xs text-primary font-medium mt-0.5">
+                    {t(currentTestimonial.universityKey)}
+                  </p>
                 </div>
-
-                {/* Enhanced Quote section - 8 columns */}
-                <div className="lg:col-span-8 text-center lg:text-left space-y-6">
-                  {/* Quote text */}
-                  <div className="relative">
-                    <p className="text-xl md:text-2xl lg:text-3xl text-foreground/90 dark:text-white/90 font-light italic leading-relaxed">
-                      "{t(currentTestimonial.quoteKey)}"
-                    </p>
-                  </div>
-                  
-                  {/* Author info with enhanced design */}
-                  <div className="pt-6 border-t-2 border-gradient-to-r from-transparent via-primary/30 to-transparent">
-                    <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4">
-                      <div className="flex-1">
-                        <p className="font-bold text-primary text-2xl mb-1">
-                          {t(currentTestimonial.authorKey)}
-                        </p>
-                        <p className="text-base text-muted-foreground mb-2">
-                          {t(currentTestimonial.roleKey)}
-                        </p>
-                        <div className="inline-flex items-center gap-2 backdrop-blur-md bg-primary/10 px-3 py-1.5 rounded-full border border-primary/20">
-                          <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                          <p className="text-sm text-primary font-semibold">
-                            {t(currentTestimonial.universityKey)}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div className="hidden sm:block">
+                  <StarRating rating={currentTestimonial.rating} />
                 </div>
+              </div>
+              
+              {/* Mobile Rating */}
+              <div className="sm:hidden mt-4 flex justify-center">
+                <StarRating rating={currentTestimonial.rating} />
               </div>
             </div>
 
-            {/* Enhanced Navigation controls */}
-            <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 flex justify-between px-0 md:-mx-8 pointer-events-none z-20">
-              <IconButtonDS
-                icon={<ChevronLeft className="h-6 w-6" />}
-                aria-label="Previous testimonial"
-                onClick={goToPrev}
-                variant="secondary"
-                size="icon"
-                className={cn(
-                  "pointer-events-auto shadow-xl backdrop-blur-glass-md",
-                  "bg-white/80 hover:bg-white border-2 border-white/60",
-                  "h-12 w-12 rounded-2xl",
-                  "hover:scale-110 transition-all duration-300"
-                )}
-              />
-              <IconButtonDS
-                icon={<ChevronRight className="h-6 w-6" />}
-                aria-label="Next testimonial"
-                onClick={goToNext}
-                variant="secondary"
-                size="icon"
-                className={cn(
-                  "pointer-events-auto shadow-xl backdrop-blur-glass-md",
-                  "bg-white/80 hover:bg-white border-2 border-white/60",
-                  "h-12 w-12 rounded-2xl",
-                  "hover:scale-110 transition-all duration-300"
-                )}
-              />
-            </div>
+            {/* Navigation */}
+            <button
+              onClick={goToPrev}
+              className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white border border-border shadow-md hover:bg-primary hover:text-white hover:border-primary transition-all flex items-center justify-center"
+              aria-label="Previous"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={goToNext}
+              className="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white border border-border shadow-md hover:bg-primary hover:text-white hover:border-primary transition-all flex items-center justify-center"
+              aria-label="Next"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
           </div>
 
-          {/* Enhanced Controls section */}
-          <div className="flex items-center justify-center gap-6 mt-10">
-            {/* Carousel indicators with progress */}
-            <div className="flex items-center gap-3">
-              {testimonialsData.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => goToSlide(index)}
-                  className={cn(
-                    "relative rounded-full transition-all duration-500 overflow-hidden",
-                    index === currentIndex 
-                      ? "w-12 h-3 bg-primary" 
-                      : "w-3 h-3 bg-gray-300 hover:bg-gray-400 hover:scale-125"
-                  )}
-                  aria-label={`Go to slide ${index + 1}`}
-                >
-                  {index === currentIndex && isAutoPlaying && (
-                    <div 
-                      className="absolute inset-0 bg-primary/30"
-                      style={{
-                        animation: 'progress 6s linear infinite'
-                      }}
-                    />
-                  )}
-                </button>
-              ))}
-            </div>
-
-            {/* Play/Pause control */}
-            <button
-              onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-              className={cn(
-                "backdrop-blur-md bg-white/60 hover:bg-white/80",
-                "border-2 border-white/60 rounded-full p-2",
-                "transition-all duration-300 hover:scale-110",
-                "shadow-lg"
-              )}
-              aria-label={isAutoPlaying ? "Pause autoplay" : "Resume autoplay"}
-            >
-              {isAutoPlaying ? (
-                <Pause className="h-4 w-4 text-primary" />
-              ) : (
-                <Play className="h-4 w-4 text-primary" />
-              )}
-            </button>
-
-            {/* Counter */}
-            <div className="backdrop-blur-md bg-white/60 px-4 py-2 rounded-full border-2 border-white/60">
-              <span className="text-sm font-semibold text-primary">
-                {currentIndex + 1} / {testimonialsData.length}
-              </span>
-            </div>
+          {/* Indicators */}
+          <div className="flex justify-center gap-2 mt-6">
+            {testimonialsData.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={cn(
+                  "h-2 rounded-full transition-all",
+                  index === currentIndex ? "w-8 bg-primary" : "w-2 bg-gray-300 hover:bg-gray-400"
+                )}
+                aria-label={`Slide ${index + 1}`}
+              />
+            ))}
           </div>
         </div>
-
-        {/* Enhanced CTA with stats */}
-        <div className="text-center space-y-6">
-          <div className="flex flex-wrap justify-center gap-8 mb-8">
-            <div className="backdrop-blur-md bg-white/40 px-6 py-3 rounded-2xl border border-white/60">
-              <div className="text-3xl font-bold text-primary">500+</div>
-              <div className="text-sm text-muted-foreground">{t("testimonial.stats.students", "Happy Students")}</div>
-            </div>
-            <div className="backdrop-blur-md bg-white/40 px-6 py-3 rounded-2xl border border-white/60">
-              <div className="text-3xl font-bold text-primary">4.9</div>
-              <div className="text-sm text-muted-foreground">{t("testimonial.stats.rating", "Average Rating")}</div>
-            </div>
-            <div className="backdrop-blur-md bg-white/40 px-6 py-3 rounded-2xl border border-white/60">
-              <div className="text-3xl font-bold text-primary">98%</div>
-              <div className="text-sm text-muted-foreground">{t("testimonial.stats.success", "Success Rate")}</div>
-            </div>
-          </div>
-          
+        {/* CTA */}
+        <div className="text-center">
           <Link to="/testimonials">
-            <ButtonDS 
-              variant="primary" 
-              size="lg"
-              className="shadow-xl shadow-accent/20 hover:shadow-2xl hover:shadow-accent/30 transition-all duration-300"
-            >
+            <ButtonDS variant="primary" size="lg">
               {t("testimonial.cta", "Read More Success Stories")}
             </ButtonDS>
           </Link>
         </div>
       </div>
-
-      {/* Add keyframes for progress animation */}
-      <style>{`
-        @keyframes progress {
-          from {
-            transform: translateX(-100%);
-          }
-          to {
-            transform: translateX(0%);
-          }
-        }
-      `}</style>
     </section>
   );
 };
