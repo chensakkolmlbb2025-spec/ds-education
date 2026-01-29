@@ -79,8 +79,8 @@ const Contact = () => {
 
               <div className="space-y-6">
                 <motion.div variants={fadeInLeft} className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-6 w-6 text-accent-foreground" />
+                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                    <MapPin className="h-6 w-6 text-primary-foreground" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-primary mb-1">{t("contact.mainOffice")}</h4>
@@ -91,8 +91,8 @@ const Contact = () => {
                 </motion.div>
 
                 <motion.div variants={fadeInLeft} className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
-                    <Phone className="h-6 w-6 text-accent-foreground" />
+                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                    <Phone className="h-6 w-6 text-primary-foreground" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-primary mb-1">{t("contact.phoneNumbers")}</h4>
@@ -104,8 +104,8 @@ const Contact = () => {
                 </motion.div>
 
                 <motion.div variants={fadeInLeft} className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
-                    <MessageCircle className="h-6 w-6 text-accent-foreground" />
+                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                    <MessageCircle className="h-6 w-6 text-primary-foreground" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-primary mb-1">{t("contact.whatsapp")}</h4>
@@ -116,8 +116,8 @@ const Contact = () => {
                 </motion.div>
 
                 <motion.div variants={fadeInLeft} className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
-                    <Mail className="h-6 w-6 text-accent-foreground" />
+                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                    <Mail className="h-6 w-6 text-primary-foreground" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-primary mb-1">{t("contact.email")}</h4>

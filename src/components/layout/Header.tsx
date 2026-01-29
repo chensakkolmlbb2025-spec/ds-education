@@ -247,7 +247,7 @@ const Header = () => {
               </div>
 
               <Link to="/contact" className="ml-2">
-                <ButtonDS variant="accent" size="md">
+                <ButtonDS variant="primary" size="md">
                   {t("common.bookNow")}
                 </ButtonDS>
               </Link>
@@ -400,7 +400,7 @@ const Header = () => {
               ))}
 
               <Link to="/contact" onClick={toggleMobileMenu} className="mt-4">
-                <ButtonDS variant="accent" fullWidth size="lg">
+                <ButtonDS variant="primary" fullWidth size="lg">
                   {t("common.bookNow")}
                 </ButtonDS>
               </Link>

@@ -289,7 +289,7 @@ const PartnerCountry = () => {
               </p>
             </motion.div>
             <motion.div variants={scaleIn} className="bg-card border border-border rounded-lg p-6 shadow-card">
-              <h3 className="text-lg font-bold mb-4 text-accent">{t("partners.visa")}</h3>
+              <h3 className="text-lg font-bold mb-4 text-primary">{t("partners.visa")}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 {data.visa}
               </p>

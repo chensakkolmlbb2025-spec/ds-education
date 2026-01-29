@@ -72,8 +72,8 @@ const Foundation = () => {
                 </p>
               </motion.div>
               <motion.div variants={scaleIn} className="text-center p-6">
-                <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Building className="h-8 w-8 text-accent-foreground" />
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Building className="h-8 w-8 text-primary-foreground" />
                 </div>
                 <h3 className="text-lg font-bold text-primary mb-2">{t("foundation.opportunity.title")}</h3>
                 <p className="text-sm text-muted-foreground">
@@ -113,7 +113,7 @@ const Foundation = () => {
                 "shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
               )}
             >
-              <div className="text-4xl font-bold text-accent drop-shadow-md mb-2">50+</div>
+              <div className="text-4xl font-bold text-primary drop-shadow-md mb-2">50+</div>
               <p className="text-muted-foreground">{t("foundation.studentsSupported")}</p>
             </motion.div>
             <motion.div 
@@ -124,7 +124,7 @@ const Foundation = () => {
                 "shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
               )}
             >
-              <div className="text-4xl font-bold text-accent drop-shadow-md mb-2">10+</div>
+              <div className="text-4xl font-bold text-primary drop-shadow-md mb-2">10+</div>
               <p className="text-muted-foreground">{t("foundation.partnerUniversities")}</p>
             </motion.div>
             <motion.div 
@@ -135,7 +135,7 @@ const Foundation = () => {
                 "shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
               )}
             >
-              <div className="text-4xl font-bold text-accent drop-shadow-md mb-2">5</div>
+              <div className="text-4xl font-bold text-primary drop-shadow-md mb-2">5</div>
               <p className="text-muted-foreground">{t("foundation.countries")}</p>
             </motion.div>
           </div>

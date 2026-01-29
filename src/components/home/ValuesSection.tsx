@@ -52,7 +52,7 @@ const ValuesSection = () => {
             opacity: [0.3, 0.6, 0.3]
           }}
           transition={{ duration: 10, repeat: Infinity }}
-          className="absolute bottom-0 right-1/4 w-48 h-48 bg-accent/5 rounded-full blur-3xl" 
+          className="absolute bottom-0 right-1/4 w-48 h-48 bg-primary/5 rounded-full blur-3xl" 
         />
       </motion.div>
 
@@ -89,7 +89,7 @@ const ValuesSection = () => {
               >
                 <value.icon className={cn(
                   "h-8 w-8 drop-shadow",
-                  value.variant === "filled" ? "text-accent" : "text-primary"
+                  value.variant === "filled" ? "text-white" : "text-primary"
                 )} />
               </motion.div>
 
@@ -121,7 +121,7 @@ const ValuesSection = () => {
                     opacity: [0.2, 0.3, 0.2]
                   }}
                   transition={{ duration: 3, repeat: Infinity }}
-                  className="absolute -top-4 -right-4 w-24 h-24 bg-accent/20 rounded-full blur-2xl" 
+                  className="absolute -top-4 -right-4 w-24 h-24 bg-white/20 rounded-full blur-2xl" 
                 />
               )}
             </motion.div>

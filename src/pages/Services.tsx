@@ -134,7 +134,7 @@ const Services = () => {
                     <ul className="relative z-10 space-y-2">
                       {details.map((detail, i) => (
                         <li key={i} className="text-sm text-white/85 flex items-start gap-2 drop-shadow">
-                          <span className="text-accent mt-1">•</span>
+                          <span className="text-white mt-1">•</span>
                           <span>{detail}</span>
                         </li>
                       ))}

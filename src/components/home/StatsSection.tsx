@@ -118,7 +118,7 @@ const StatCard = ({
       className={cn(
         "relative text-center p-6 rounded-2xl",
         "bg-card border border-border shadow-md",
-        "transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-accent/50",
+        "transition-all duration-300 hover:shadow-xl hover:scale-105 hover:border-primary/50",
         "group"
       )}
       style={{ animationDelay: `${index * 100}ms` }}
@@ -126,16 +126,16 @@ const StatCard = ({
       {/* Icon */}
       <div className={cn(
         "w-14 h-14 mx-auto mb-4 rounded-xl",
-        "bg-accent/10 flex items-center justify-center",
-        "transition-all duration-300 group-hover:scale-110 group-hover:bg-accent/20"
+        "bg-primary/10 flex items-center justify-center",
+        "transition-all duration-300 group-hover:scale-110 group-hover:bg-primary/20"
       )}>
-        <Icon className="w-7 h-7 text-accent" />
+        <Icon className="w-7 h-7 text-primary" />
       </div>
 
       {/* Value */}
       <div className="text-4xl md:text-5xl font-bold text-foreground mb-2">
         {count.toLocaleString()}
-        <span className="text-accent">{suffix}</span>
+        <span className="text-primary">{suffix}</span>
       </div>
 
       {/* Label */}
@@ -162,13 +162,13 @@ const StatsSection = () => {
         />
         {/* Gradient orbs */}
         <div className="absolute top-0 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-48 h-48 bg-accent/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-48 h-48 bg-primary/5 rounded-full blur-3xl" />
       </div>
 
       <div className="ds-container relative z-10">
         {/* Header */}
         <div className="text-center mb-12">
-          <span className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-3">
+          <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-3">
             {t("stats.subtitle", "Our Impact")}
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">

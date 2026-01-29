@@ -178,7 +178,7 @@ const TeamSection = () => {
         >
           <motion.span 
             variants={fadeInUp}
-            className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-3"
+            className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-3"
           >
             {t("team.subtitle", "Meet Our Team")}
           </motion.span>

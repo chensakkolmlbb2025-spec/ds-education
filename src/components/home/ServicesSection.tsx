@@ -67,7 +67,7 @@ const ServicesSection = () => {
         >
           <motion.span 
             variants={fadeInUp}
-            className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-3"
+            className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-3"
           >
             {t("services.subtitle", "What We Offer")}
           </motion.span>
@@ -85,7 +85,7 @@ const ServicesSection = () => {
           </motion.p>
           <motion.div 
             variants={scaleIn}
-            className="w-24 h-1 bg-gradient-to-r from-accent to-accent/50 mx-auto mt-6 rounded-full" 
+            className="w-24 h-1 bg-gradient-to-r from-primary to-primary/50 mx-auto mt-6 rounded-full" 
           />
         </motion.div>
 
@@ -141,7 +141,7 @@ const ServicesSection = () => {
                   </p>
 
                   {/* Learn more link */}
-                  <div className="flex items-center gap-2 text-accent group-hover:text-white font-medium text-sm transition-colors">
+                  <div className="flex items-center gap-2 text-white/90 group-hover:text-white font-medium text-sm transition-colors">
                     <span>{t("common.learnMore")}</span>
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </div>

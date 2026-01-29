@@ -50,8 +50,8 @@ const HeroSection = () => {
               variants={fadeInUp}
               className="flex items-center gap-3 mb-8"
             >
-              <span className="h-0.5 w-12 bg-accent rounded-full" />
-              <span className="text-accent font-semibold text-sm uppercase tracking-widest">
+              <span className="h-0.5 w-12 bg-white rounded-full" />
+              <span className="text-white font-semibold text-sm uppercase tracking-widest">
                 {t("hero.tagline", "DS EDUCATION")}
               </span>
             </motion.div>
@@ -84,7 +84,7 @@ const HeroSection = () => {
                   transition={{ duration: 0.2 }}
                 >
                   <ButtonDS 
-                    variant="accent" 
+                    variant="primary" 
                     size="xl"
                     className="w-full sm:w-auto shadow-lg hover:shadow-xl transition-all duration-300"
                     rightIcon={<ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />}
@@ -122,21 +122,21 @@ const HeroSection = () => {
               )}
             >
               <div className="relative group">
-                <div className="absolute -inset-2 bg-accent/20 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute -inset-2 bg-white/20 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="relative">
                   <div className="text-3xl md:text-4xl font-bold text-white drop-shadow-lg">500+</div>
                   <div className="text-sm text-white/80 mt-1">{t("hero.stats.students", "Students Placed")}</div>
                 </div>
               </div>
               <div className="border-l border-r border-white/20 relative group">
-                <div className="absolute -inset-2 bg-accent/20 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute -inset-2 bg-white/20 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="relative">
                   <div className="text-3xl md:text-4xl font-bold text-white drop-shadow-lg">100+</div>
                   <div className="text-sm text-white/80 mt-1">{t("hero.stats.universities", "Universities")}</div>
                 </div>
               </div>
               <div className="relative group">
-                <div className="absolute -inset-2 bg-accent/20 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute -inset-2 bg-white/20 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="relative">
                   <div className="text-3xl md:text-4xl font-bold text-white drop-shadow-lg">9</div>
                   <div className="text-sm text-white/80 mt-1">{t("hero.stats.countries", "Countries")}</div>

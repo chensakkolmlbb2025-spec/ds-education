@@ -263,22 +263,50 @@ const { t } = useTranslation();
 
 ## 🚢 Deployment
 
-### Recommended Platforms
-- **Vercel** (recommended)
-- Netlify
-- AWS Amplify
-- GitHub Pages
+### Quick Deploy to Vercel (Recommended)
 
-### Build Command
-```bash
-npm run build
-```
+**One-Click Deploy:**
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/sakkol-git/pixel-perfect-clone)
 
-### Deploy to Vercel
+**Manual Deploy:**
 ```bash
+# Option 1: Use deployment helper script
+./deploy.sh
+
+# Option 2: Vercel CLI
 npm install -g vercel
 vercel --prod
+
+# Option 3: GitHub + Vercel Dashboard
+# 1. Push to GitHub: git push origin main
+# 2. Import project at vercel.com/new
+# 3. Click Deploy!
 ```
+
+### Complete Deployment Guides
+- 📘 **[VERCEL_DEPLOYMENT.md](./VERCEL_DEPLOYMENT.md)** - Complete step-by-step guide
+- ✅ **[DEPLOYMENT_CHECKLIST.md](./DEPLOYMENT_CHECKLIST.md)** - Pre/post deployment checklist
+- 🔧 **[deploy.sh](./deploy.sh)** - Automated deployment script
+
+### Deployment Configuration
+All necessary files are already configured:
+- ✅ `vercel.json` - Vercel configuration with SPA routing & security headers
+- ✅ `vite.config.ts` - Optimized build with code splitting
+- ✅ `.env.example` - Environment variables template
+- ✅ `.vercelignore` - Files excluded from deployment
+
+### Build Optimization
+The project includes advanced build optimization:
+- **Code Splitting**: Separate chunks for React, UI components, animations, i18n
+- **Minification**: esbuild for fast, efficient minification
+- **Tree Shaking**: Automatic removal of unused code
+- **Asset Optimization**: Images and fonts optimized for web
+
+### Other Deployment Platforms
+- **Netlify**: `npm run build` → Deploy `dist` folder
+- **Cloudflare Pages**: Auto-detected Vite settings
+- **AWS Amplify**: Configure build settings in console
+- **GitHub Pages**: Use with `vite-plugin-gh-pages`
 
 ---
 

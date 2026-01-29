@@ -141,7 +141,7 @@ const AboutSection = () => {
           >
             <motion.span 
               variants={fadeInUp}
-              className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-3"
+              className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-3"
             >
               {t("about.subtitle", "Who We Are")}
             </motion.span>
@@ -181,8 +181,8 @@ const AboutSection = () => {
                     "hover:shadow-md hover:border-primary/20"
                   )}
                 >
-                  <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                    <CheckCircle2 className="w-5 h-5 text-accent" />
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <CheckCircle2 className="w-5 h-5 text-primary" />
                   </div>
                   <span className="text-sm font-medium text-primary">
                     {t(item.key, item.fallback)}

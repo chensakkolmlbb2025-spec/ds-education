@@ -177,7 +177,7 @@ const ContactSection = () => {
             opacity: [0.3, 0.5, 0.3]
           }}
           transition={{ duration: 10, repeat: Infinity }}
-          className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" 
+          className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" 
         />
       </motion.div>
 
@@ -192,7 +192,7 @@ const ContactSection = () => {
         >
           <motion.span 
             variants={fadeInUp}
-            className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-3"
+            className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-3"
           >
             {t("contact.subtitle", "Get In Touch")}
           </motion.span>

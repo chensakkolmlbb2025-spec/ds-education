@@ -101,11 +101,11 @@ const Testimonials = () => {
 
                 {/* Content */}
                 <div className="flex-1">
-                  <div className="text-4xl text-accent mb-4">"</div>
+                  <div className="text-4xl text-primary mb-4">"</div>
                   <p className="text-muted-foreground italic leading-relaxed mb-6">
                     {testimonial.quote}
                   </p>
-                  <div className="flex items-center gap-2 text-accent mb-4">
+                  <div className="flex items-center gap-2 text-primary mb-4">
                     <span className="text-2xl">❝</span>
                     <span className="text-2xl">❞</span>
                   </div>

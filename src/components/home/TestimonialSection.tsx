@@ -45,7 +45,7 @@ const StarRating = ({ rating }: { rating: number }) => (
         key={i}
         className={cn(
           "h-5 w-5 transition-colors",
-          i < rating ? "fill-accent text-accent" : "fill-gray-200 text-gray-200"
+          i < rating ? "fill-primary text-primary" : "fill-gray-200 text-gray-200"
         )}
       />
     ))}
@@ -59,7 +59,7 @@ const CarouselDot = ({ active, onClick }: { active: boolean; onClick: () => void
     className={cn(
       "w-3 h-3 rounded-full transition-all duration-300",
       active 
-        ? "bg-accent w-8" 
+        ? "bg-primary w-8" 
         : "bg-gray-300 hover:bg-gray-400"
     )}
     aria-label={active ? "Current slide" : "Go to slide"}
@@ -103,30 +103,30 @@ const TestimonialSection = () => {
     <section className="ds-section bg-gradient-to-b from-muted/30 via-background to-muted/20 relative overflow-hidden">
       {/* Enhanced Background decorations with animation */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-10 left-10 w-96 h-96 bg-gradient-to-br from-accent/10 via-accent/5 to-transparent rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-10 left-10 w-96 h-96 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-10 right-10 w-80 h-80 bg-gradient-to-tl from-primary/10 via-primary/5 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/3 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/3 rounded-full blur-3xl" />
         
         {/* Floating elements */}
-        <div className="absolute top-20 right-1/4 w-2 h-2 bg-accent/30 rounded-full animate-bounce" style={{ animationDuration: '3s' }} />
+        <div className="absolute top-20 right-1/4 w-2 h-2 bg-primary/30 rounded-full animate-bounce" style={{ animationDuration: '3s' }} />
         <div className="absolute bottom-32 left-1/4 w-3 h-3 bg-primary/30 rounded-full animate-bounce" style={{ animationDuration: '4s', animationDelay: '0.5s' }} />
       </div>
 
       <div className="ds-container relative z-10">
         {/* Enhanced Header with stats */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 backdrop-blur-md bg-accent/10 px-4 py-2 rounded-full mb-4 border border-accent/20">
-            <Star className="w-4 h-4 text-accent fill-accent" />
-            <span className="text-accent font-semibold text-sm uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 backdrop-blur-md bg-primary/10 px-4 py-2 rounded-full mb-4 border border-primary/20">
+            <Star className="w-4 h-4 text-primary fill-primary" />
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
               {t("testimonial.subtitle", "Student Success Stories")}
             </span>
-            <Star className="w-4 h-4 text-accent fill-accent" />
+            <Star className="w-4 h-4 text-primary fill-primary" />
           </div>
           <h2 className="ds-heading mb-4">{t("testimonial.title")}</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
             {t("testimonial.description", "Hear from our students who achieved their dreams of studying abroad")}
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto rounded-full" />
+          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto rounded-full" />
         </div>
 
         {/* Main Testimonial Showcase */}
@@ -134,10 +134,10 @@ const TestimonialSection = () => {
           <div className="relative">
             {/* Decorative quote marks */}
             <div className="absolute -top-8 -left-4 md:left-6 z-0">
-              <Quote className="w-20 h-20 md:w-32 md:h-32 text-accent/10 rotate-180" />
+              <Quote className="w-20 h-20 md:w-32 md:h-32 text-primary/10 rotate-180" />
             </div>
             <div className="absolute -bottom-8 -right-4 md:right-6 z-0">
-              <Quote className="w-20 h-20 md:w-32 md:h-32 text-accent/10" />
+              <Quote className="w-20 h-20 md:w-32 md:h-32 text-primary/10" />
             </div>
 
             {/* Enhanced Carousel content with fade animation */}
@@ -161,7 +161,7 @@ const TestimonialSection = () => {
                 <div className="lg:col-span-4 flex justify-center">
                   <div className="relative group">
                     {/* Animated decorative rings */}
-                    <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-accent/30 via-primary/20 to-accent/30 blur-lg group-hover:blur-xl transition-all duration-500 animate-pulse" />
+                    <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-primary/30 via-primary/20 to-primary/30 blur-lg group-hover:blur-xl transition-all duration-500 animate-pulse" />
                     <div className="absolute -inset-1 rounded-3xl bg-gradient-to-br from-white/50 to-white/20 group-hover:from-white/70 group-hover:to-white/30 transition-all duration-500" />
                     
                     {/* Image container */}
@@ -172,7 +172,7 @@ const TestimonialSection = () => {
                         className={cn(
                           "relative w-56 h-56 md:w-72 md:h-72 rounded-3xl object-cover",
                           "shadow-2xl transition-all duration-700",
-                          "group-hover:scale-[1.02] group-hover:shadow-accent/20"
+                          "group-hover:scale-[1.02] group-hover:shadow-primary/20"
                         )}
                       />
                       
@@ -202,18 +202,18 @@ const TestimonialSection = () => {
                   </div>
                   
                   {/* Author info with enhanced design */}
-                  <div className="pt-6 border-t-2 border-gradient-to-r from-transparent via-accent/30 to-transparent">
+                  <div className="pt-6 border-t-2 border-gradient-to-r from-transparent via-primary/30 to-transparent">
                     <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4">
                       <div className="flex-1">
-                        <p className="font-bold text-primary dark:text-accent text-2xl mb-1">
+                        <p className="font-bold text-primary text-2xl mb-1">
                           {t(currentTestimonial.authorKey)}
                         </p>
                         <p className="text-base text-muted-foreground mb-2">
                           {t(currentTestimonial.roleKey)}
                         </p>
-                        <div className="inline-flex items-center gap-2 backdrop-blur-md bg-accent/10 px-3 py-1.5 rounded-full border border-accent/20">
-                          <div className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-                          <p className="text-sm text-accent font-semibold">
+                        <div className="inline-flex items-center gap-2 backdrop-blur-md bg-primary/10 px-3 py-1.5 rounded-full border border-primary/20">
+                          <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+                          <p className="text-sm text-primary font-semibold">
                             {t(currentTestimonial.universityKey)}
                           </p>
                         </div>
@@ -266,7 +266,7 @@ const TestimonialSection = () => {
                   className={cn(
                     "relative rounded-full transition-all duration-500 overflow-hidden",
                     index === currentIndex 
-                      ? "w-12 h-3 bg-accent" 
+                      ? "w-12 h-3 bg-primary" 
                       : "w-3 h-3 bg-gray-300 hover:bg-gray-400 hover:scale-125"
                   )}
                   aria-label={`Go to slide ${index + 1}`}
@@ -300,7 +300,42 @@ const TestimonialSection = () => {
                 <Play className="h-4 w-4 text-primary" />
               )}
             </button>
+
+            {/* Counter */}
+            <div className="backdrop-blur-md bg-white/60 px-4 py-2 rounded-full border-2 border-white/60">
+              <span className="text-sm font-semibold text-primary">
+                {currentIndex + 1} / {testimonialsData.length}
+              </span>
+            </div>
           </div>
+        </div>
+
+        {/* Enhanced CTA with stats */}
+        <div className="text-center space-y-6">
+          <div className="flex flex-wrap justify-center gap-8 mb-8">
+            <div className="backdrop-blur-md bg-white/40 px-6 py-3 rounded-2xl border border-white/60">
+              <div className="text-3xl font-bold text-primary">500+</div>
+              <div className="text-sm text-muted-foreground">{t("testimonial.stats.students", "Happy Students")}</div>
+            </div>
+            <div className="backdrop-blur-md bg-white/40 px-6 py-3 rounded-2xl border border-white/60">
+              <div className="text-3xl font-bold text-primary">4.9</div>
+              <div className="text-sm text-muted-foreground">{t("testimonial.stats.rating", "Average Rating")}</div>
+            </div>
+            <div className="backdrop-blur-md bg-white/40 px-6 py-3 rounded-2xl border border-white/60">
+              <div className="text-3xl font-bold text-primary">98%</div>
+              <div className="text-sm text-muted-foreground">{t("testimonial.stats.success", "Success Rate")}</div>
+            </div>
+          </div>
+          
+          <Link to="/testimonials">
+            <ButtonDS 
+              variant="primary" 
+              size="lg"
+              className="shadow-xl shadow-accent/20 hover:shadow-2xl hover:shadow-accent/30 transition-all duration-300"
+            >
+              {t("testimonial.cta", "Read More Success Stories")}
+            </ButtonDS>
+          </Link>
         </div>
       </div>
 
